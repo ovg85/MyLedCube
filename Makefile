@@ -41,7 +41,7 @@
 
 
 # MCU name
-MCU = atmega88
+MCU = atmega8
 
 
 # Processor frequency.
@@ -58,11 +58,11 @@ MCU = atmega88
 #         F_CPU =  7372800
 #         F_CPU =  8000000
 #         F_CPU = 11059200
-#         F_CPU = 14745600
+           F_CPU = 14745600
 #         F_CPU = 16000000
 #         F_CPU = 18432000
 #         F_CPU = 20000000
-F_CPU = 8000000
+# F_CPU = 8000000
 
 
 # Output format. (can be srec, ihex, binary)
@@ -272,7 +272,7 @@ LDFLAGS += $(PRINTF_LIB) $(SCANF_LIB) $(MATH_LIB)
 # Type: avrdude -c ?
 # to get a full listing.
 #
-AVRDUDE_PROGRAMMER = stk500v2
+AVRDUDE_PROGRAMMER = avrisp
 
 # com1 = serial port. Use lpt1 to connect to parallel port.
 AVRDUDE_PORT = com1    # programmer connected to serial device
@@ -614,6 +614,8 @@ $(shell mkdir $(OBJDIR) 2>/dev/null)
 .PHONY : all begin finish end sizebefore sizeafter gccversion \
 build elf hex eep lss sym coff extcoff \
 clean clean_list program debug gdb-config
+
+
 
 
 
